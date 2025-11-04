@@ -53,11 +53,11 @@ const CoffeeMarketGame = () => {
 
   const [message, setMessage] = useState('');
   const [showAcquisition, setShowAcquisition] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [selectedCompetitor, setSelectedCompetitor] = useState<number | null>(null);
+  const [, setSelectedCompetitor] = useState<number | null>(null);
   const [floatingIcons, setFloatingIcons] = useState<FloatingIcon[]>([]);
   const [celebrating, setCelebrating] = useState(false);
   const [shaking, setShaking] = useState(false);
+
 
   useEffect(() => {
     if (floatingIcons.length > 0) {
@@ -220,7 +220,7 @@ const CoffeeMarketGame = () => {
 
   if (!gameStarted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 p-8 relative overflow-hidden">
+      <div className="min-h-screen bg-linear-to-br from-amber-50 via-orange-50 to-yellow-50 p-8 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(20)].map((_, i) => (
             <div
@@ -248,7 +248,7 @@ const CoffeeMarketGame = () => {
             <p className="text-gray-600 animate-fadeIn" style={{ animationDelay: '0.2s' }}>Mô phỏng cạnh tranh & độc quyền</p>
           </div>
 
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 mb-6 border-2 border-amber-200 animate-fadeIn" style={{ animationDelay: '0.4s' }}>
+          <div className="bg-linear-to-br from-amber-50 to-orange-50 rounded-xl p-6 mb-6 border-2 border-amber-200 animate-fadeIn" style={{ animationDelay: '0.4s' }}>
             <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
               <Target className="w-6 h-6 text-amber-600" />
               📖 Cách chơi:
@@ -277,7 +277,7 @@ const CoffeeMarketGame = () => {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 mb-6 border-2 border-blue-200 animate-fadeIn" style={{ animationDelay: '0.6s' }}>
+          <div className="bg-linear-to-br from-blue-50 to-cyan-50 rounded-xl p-6 mb-6 border-2 border-blue-200 animate-fadeIn" style={{ animationDelay: '0.6s' }}>
             <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
               <Zap className="w-6 h-6 text-blue-600" />
               🧠 Học kinh tế:
@@ -294,7 +294,7 @@ const CoffeeMarketGame = () => {
 
           <button
             onClick={() => setGameStarted(true)}
-            className="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-bold py-4 px-6 rounded-xl transition-all text-lg shadow-lg hover:shadow-xl transform hover:scale-105 animate-fadeIn"
+            className="w-full bg-linear-to-br from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-bold py-4 px-6 rounded-xl transition-all text-lg shadow-lg hover:shadow-xl transform hover:scale-105 animate-fadeIn"
             style={{ animationDelay: '0.8s' }}
           >
             🎮 Bắt đầu chơi
@@ -323,7 +323,7 @@ const CoffeeMarketGame = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-linear-to-br from-amber-50 via-orange-50 to-yellow-50 p-4 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(15)].map((_, i) => (
           <div
@@ -388,7 +388,7 @@ const CoffeeMarketGame = () => {
               <div>
                 <h1 className="text-2xl font-bold text-gray-800">Quán Cà Phê Của Bạn</h1>
                 <div className="flex items-center gap-2 mt-1">
-                  <span className={`text-sm font-semibold ${marketType.color} px-3 py-1 rounded-full bg-gradient-to-r ${marketType.bgColor} animate-pulse`}>
+                  <span className={`text-sm font-semibold ${marketType.color} px-3 py-1 rounded-full bg-linear-to-br ${marketType.bgColor} animate-pulse`}>
                     {marketType.icon} {marketType.type}
                   </span>
                 </div>
@@ -403,13 +403,13 @@ const CoffeeMarketGame = () => {
           </div>
 
           {message && (
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border-l-4 border-blue-500 p-4 mb-6 rounded animate-slideIn shadow-md">
+            <div className="bg-linear-to-br from-blue-50 to-cyan-50 border-l-4 border-blue-500 p-4 mb-6 rounded animate-slideIn shadow-md">
               <p className="text-blue-800 font-medium">{message}</p>
             </div>
           )}
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-105 transform">
+            <div className="bg-linear-to-br from-blue-50 to-blue-100 p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-105 transform">
               <div className="flex items-center gap-2 mb-2">
                 <Users className="w-5 h-5 text-blue-600 animate-bounce" />
                 <span className="text-sm text-gray-600">Khách hàng</span>
@@ -417,7 +417,7 @@ const CoffeeMarketGame = () => {
               <div className="text-2xl font-bold text-blue-700">{stats.customers}</div>
               <div className="text-xs text-blue-600 mt-1">👥 +{Math.floor(stats.customers * 0.1)}</div>
             </div>
-            <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-105 transform">
+            <div className="bg-linear-to-br from-green-50 to-green-100 p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-105 transform">
               <div className="flex items-center gap-2 mb-2">
                 <TrendingUp className="w-5 h-5 text-green-600 animate-bounce" />
                 <span className="text-sm text-gray-600">Thị phần</span>
@@ -430,7 +430,7 @@ const CoffeeMarketGame = () => {
                 ></div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-105 transform">
+            <div className="bg-linear-to-br from-yellow-50 to-yellow-100 p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-105 transform">
               <div className="flex items-center gap-2 mb-2">
                 <Star className="w-5 h-5 text-yellow-600 animate-bounce" />
                 <span className="text-sm text-gray-600">Hài lòng</span>
@@ -445,7 +445,7 @@ const CoffeeMarketGame = () => {
                 ))}
               </div>
             </div>
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-105 transform">
+            <div className="bg-linear-to-br from-purple-50 to-purple-100 p-4 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-105 transform">
               <div className="flex items-center gap-2 mb-2">
                 <Award className="w-5 h-5 text-purple-600 animate-bounce" />
                 <span className="text-sm text-gray-600">Vị trí</span>
@@ -514,14 +514,14 @@ const CoffeeMarketGame = () => {
           <div className="flex gap-3">
             <button
               onClick={playRound}
-              className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="flex-1 bg-linear-to-br from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               ▶️ Chạy vòng tiếp theo
             </button>
             <button
               onClick={() => setShowAcquisition(!showAcquisition)}
               disabled={competitors.filter(c => c.isActive).length === 0}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100"
+              className="bg-linear-to-br from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100"
             >
               🏢 Mua lại đối thủ
             </button>
@@ -538,7 +538,7 @@ const CoffeeMarketGame = () => {
               {competitors.filter(c => c.isActive).map(comp => {
                 const cost = comp.money * 2 + comp.marketShare * 500;
                 return (
-                  <div key={comp.id} className="bg-gradient-to-br from-purple-50 to-pink-50 p-4 rounded-xl border-2 border-purple-200 hover:border-purple-400 transition-all transform hover:scale-105 shadow-md hover:shadow-lg">
+                  <div key={comp.id} className="bg-linear-to-br from-purple-50 to-pink-50 p-4 rounded-xl border-2 border-purple-200 hover:border-purple-400 transition-all transform hover:scale-105 shadow-md hover:shadow-lg">
                     <h3 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
                       <Coffee className="w-4 h-4" />
                       {comp.name}
@@ -563,7 +563,7 @@ const CoffeeMarketGame = () => {
                     <button
                       onClick={() => acquireCompetitor(comp.id)}
                       disabled={stats.money < cost}
-                      className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-2 px-4 rounded-lg transition-all text-sm transform hover:scale-105 disabled:scale-100 shadow-md"
+                      className="w-full bg-linear-to-br from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-2 px-4 rounded-lg transition-all text-sm transform hover:scale-105 disabled:scale-100 shadow-md"
                     >
                       {stats.money < cost ? '❌ Không đủ tiền' : '✅ Mua lại'}
                     </button>
@@ -584,8 +584,8 @@ const CoffeeMarketGame = () => {
               <div
                 key={comp.id}
                 className={`p-4 rounded-xl border-2 transition-all transform hover:scale-102 ${comp.isActive
-                  ? 'bg-gradient-to-r from-white to-blue-50 border-blue-200 hover:border-blue-400 shadow-md hover:shadow-lg'
-                  : 'bg-gradient-to-r from-gray-100 to-gray-200 border-gray-300 opacity-60'
+                  ? 'bg-linear-to-br from-white to-blue-50 border-blue-200 hover:border-blue-400 shadow-md hover:shadow-lg'
+                  : 'bg-linear-to-br from-gray-100 to-gray-200 border-gray-300 opacity-60'
                   }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -595,12 +595,12 @@ const CoffeeMarketGame = () => {
                       <Coffee className={`w-5 h-5 ${comp.isActive ? 'text-amber-600 animate-pulse' : 'text-gray-400'}`} />
                       <span className="font-bold text-gray-800">{comp.name}</span>
                       {!comp.isActive && (
-                        <span className="text-xs bg-gradient-to-r from-red-100 to-pink-100 text-red-700 px-2 py-1 rounded-full animate-pulse">
+                        <span className="text-xs bg-linear-to-br from-red-100 to-pink-100 text-red-700 px-2 py-1 rounded-full animate-pulse">
                           ✓ Đã mua lại
                         </span>
                       )}
                       {comp.isActive && comp.marketShare > stats.marketShare && (
-                        <span className="text-xs bg-gradient-to-r from-yellow-100 to-amber-100 text-yellow-700 px-2 py-1 rounded-full">
+                        <span className="text-xs bg-linear-to-br from-yellow-100 to-amber-100 text-yellow-700 px-2 py-1 rounded-full">
                           👑 Dẫn đầu
                         </span>
                       )}
@@ -642,7 +642,7 @@ const CoffeeMarketGame = () => {
                 {comp.isActive && (
                   <div className="mt-3 bg-gray-200 rounded-full h-3 overflow-hidden shadow-inner">
                     <div
-                      className="h-3 rounded-full transition-all duration-1000 bg-gradient-to-r from-blue-500 to-cyan-500 relative overflow-hidden"
+                      className="h-3 rounded-full transition-all duration-1000 bg-linear-to-r from-blue-500 to-cyan-500 relative overflow-hidden"
                       style={{ width: `${comp.marketShare}%` }}
                     >
                       <div className="absolute inset-0 bg-white opacity-30 animate-shimmer"></div>
@@ -653,7 +653,7 @@ const CoffeeMarketGame = () => {
             ))}
           </div>
 
-          <div className="mt-6 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl border-2 border-indigo-200">
+          <div className="mt-6 p-4 bg-linear-to-br from-indigo-50 to-purple-50 rounded-xl border-2 border-indigo-200">
             <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
               <Target className="w-5 h-5 text-indigo-600" />
               📊 Phân tích thị trường
