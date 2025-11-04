@@ -53,6 +53,7 @@ const CoffeeMarketGame = () => {
 
   const [message, setMessage] = useState('');
   const [showAcquisition, setShowAcquisition] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [selectedCompetitor, setSelectedCompetitor] = useState<number | null>(null);
   const [floatingIcons, setFloatingIcons] = useState<FloatingIcon[]>([]);
   const [celebrating, setCelebrating] = useState(false);
